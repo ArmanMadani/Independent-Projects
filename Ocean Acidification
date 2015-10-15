@@ -1,0 +1,28 @@
+def C(H, pCO2): 
+	if H>14 or H<0:
+		return("Error")
+	H=pow(10, -H)
+	#H=10^-H is a measure of pH, because pH=-log(H+)
+	KH=pow(10,-1.5)
+	K1=pow(10,-5.6)
+	K2=pow(10,-9.3)
+	#KH, K1, and K2 are the Dissociation Constants
+	H2CO3=KH*pCO2
+	print(H2CO3)
+	print("Concentration of Carbonic Acid")
+	HCO3=(K1/H)*H2CO3
+	print(HCO3)
+	print("Concentration of Bicarbonate")
+	CO3=(K2/H)*HCO3
+	print(CO3)
+	print("Concentration of Carbonate")
+	if H2CO3>HCO3 and H2CO3>CO3:
+		return("Higher Carbonic Acid Concentration due to LOW pH")
+	if HCO3>H2CO3 and HCO3>CO3:
+		return("Higher Concentration of Bicarbonate due to MODERATE pH")
+	if CO3>HCO3 and CO3>H2CO3:
+		return("Higher Concentration of Carbonate due to HIGH pH")
+	if H2CO3==HCO3:
+		return("Carbonic Acid and Bicarbonate concentrations equal at pH=5.6")
+	if HCO3==CO3:
+		return("Bicarbonate and Carbonate concentrations equal at ph=9.0")	
