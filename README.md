@@ -1,2 +1,2 @@
 # Independent-Projects
-Learning Python &amp; SQL Practice
+Learning Python, R, &amp; SQL Practice
